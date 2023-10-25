@@ -10,23 +10,24 @@
 <body>
     <div class="container">
         <div class="title">
-            <h1>My TO-DO App</h1>
+            <h1>My TO-DO App <img src="images/checklist.png" alt="list-icon"></h1>
         </div>
         <div class="content">
-            <input type="text" placeholder="Enter a title...">
-            <button>Add</button>
+            <input type="text" id="input-box" placeholder="Enter a title...">
+            <button onclick="addTask()">Add</button>
         </div>
         <div class="list">
             <h2>Items in TO-DO List</h2>
-            <ul>
-                <li class="checked">Read books</li>
+            <ul id="list-container">
+                <!-- <li class="checked">Read books</li>
                 <li>6:00 clk - Gym time</li>
                 <li>Go for shopping</li>
                 <li>Clean the house</li>
                 <li>Complete assignment</li>
-                <li>Visit temple</li>
+                <li>Visit temple</li> -->
             </ul>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

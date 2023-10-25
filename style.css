@@ -31,8 +31,12 @@ body {
     padding: 20px;
 }
 
-h1 {
+.title h1 {
     color: rgb(90, 10, 10);
+}
+
+.title h1 img {
+    width: 30px;
 }
 
 .content {
@@ -41,7 +45,7 @@ h1 {
     align-items: center;
     background-color: aliceblue;
     border: 1px grey;
-    border-radius: 5px;
+    border-radius: 30px;
     margin-top: 5px;
     margin-left: 20px;
     width: 300px;
@@ -50,23 +54,33 @@ h1 {
     padding-right: 20px;
 }
 
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 20px;
+    font-size: 14px;
+}
+
 button {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 30px;
-    width: 50px;
+    height: 40px;
+    width: 100px;
     background-color:cadetblue;
     border: none;
     color:white;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    font-size: 15px;
 }
 
 button:hover {
     color:black;
-    font-size: 15px;
+    font-size: 20px;
     text-decoration: underline;
 }
 
@@ -84,32 +98,38 @@ button:hover {
 ul {
     margin: 0px;
     padding: 0px;
+    list-style-type: none;
 }
 
 ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    position: relative;
+}
+
+ul#list-container {
     cursor: pointer;
     position: relative;
+    width: 100%;
     padding: 12px 5px 12px 50px;
     transition: 0.2s;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    justify-content: space-between;
 }
 
-/* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-    background: #919090;
-  }
-  
-/* Darker background-color on hover */
-ul li:hover {
-background: #ddd;
+ul#list-container li::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 16px;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-image: url(images/radio.png);
+    background-size: cover;
+    background-position: center;
 }
 
 /* When clicked on, add a background color and strike out text */
@@ -120,14 +140,18 @@ text-decoration: line-through;
 }
 
 /* Style the close button */
-.close {
+ul#list-container close {
     position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    color: #555;
+    text-align: center;
+    border-radius: 50%;
 }
   
-.close:hover {
-background-color: #f44336;
-color: white;
+ul li close:hover {
+    background-color: #ddd;
 }
