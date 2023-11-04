@@ -112,7 +112,7 @@ ul#list-container {
     cursor: pointer;
     position: relative;
     width: 100%;
-    padding: 12px 5px 12px 50px;
+    padding: 12px 20px 12px 50px;
     transition: 0.2s;
     display: flex;
     flex-direction: column;
@@ -134,24 +134,23 @@ ul#list-container li::before {
 
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
-background: #888;
-color: #fff;
-text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 /* Style the close button */
 ul#list-container close {
     position: absolute;
     right: 50px;
-    width: 40px;
-    height: 40px;
+    top: 8px;
+    width: 30px;
+    height: 30px;
     font-size: 20px;
-    line-height: 40px;
-    color: #555;
     text-align: center;
     border-radius: 50%;
+    color: black;
+    background-color:rgb(236, 235, 235);
 }
   
-ul li close:hover {
-    background-color: #ddd;
+ul#list-container close:hover {
+    background-color: #888;
 }

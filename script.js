@@ -15,4 +15,26 @@ function addTask() {
         listContainer.appendChild(li);
     }
     inputBox.value = "";
+    saveData();
 }
+
+listContainer.addEventListener("click", function(e) {
+    if(e.target.tagName === "LI") {
+        e.target.classList.toggle("checked");
+        saveData();
+    }
+    else if(e.target.tagName === "CLOSE") {
+        e.target.parentElement.remove();
+        saveData();
+    }
+}, false);
+
+function saveData() {
+    localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function displayTask() {
+    listContainer.innerHTML = localStorage.getItem("data");
+}
+
+displayTask();
